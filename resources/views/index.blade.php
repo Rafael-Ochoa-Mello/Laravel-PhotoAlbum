@@ -115,7 +115,9 @@
                         @foreach ($posts as $post)
                             <div class="col-md-4">
                                 <div class="card mb-4 shadow-sm">
-                                    <img class="card-img-top figure-img img-fluid rounded" src="">
+                                    {{-- Repare em como a imagem está sendo acessada --}}
+                                    <img class="card-img-top figure-img img-fluid rounded" src="/storage/{{$post->photo}}">
+                                    
                                     <div class="card-body">
                                         <p class="card-text">{{ $post->email }}</p>
                                         <p class="card-text">{{ $post->message }}</p>
