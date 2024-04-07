@@ -17,8 +17,11 @@ class PostController extends Controller
         $post = new Post();
         $post->email = $request->email;
         $post->message = $request->message;
-        $post->photo = ""; //$request->photo;
+        //Repare que no arquivo, é necessário o método 'file'
+        $post->photo = $request->file("photo");
         $post->save();
         return redirect('/');
     }
 }
+
+
