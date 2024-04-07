@@ -47,6 +47,17 @@ class PostController extends Controller
  
         return redirect('/');
     }
+
+    public function download($id){
+        $post = Post::find($id);        
+
+        if(isset($post)){
+            return Storage::disk('public')->download($post->photo);
+        }
+        
+        return redirect('/');
+    }
+
 }
 
 
