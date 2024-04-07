@@ -125,11 +125,11 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <!--button type="button" class="btn btn-sm btn-outline-secondary">Download</button-->
+                                              
+                                                {{-- Download --}}
                                                 <a type="button" class="btn btn-sm btn-outline-secondary"
                                                     href="{{route('post.download', $post->id)}}">Download</a>
-                                                {{-- <a type="button" class="btn btn-sm btn-outline-secondary"
-                                                    href="{{ Storage::download($post->photo) }}">Download</a> --}}
-
+                                              
                                                 {{-- Remoção --}}
                                                 <form method="post" action="{{ route('post.destroy', $post->id) }}">
                                                     @csrf
