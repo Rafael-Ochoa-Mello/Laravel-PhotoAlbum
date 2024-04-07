@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
+// Necessário para utilizar o Storage na deleção da imagem
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -28,6 +30,21 @@ class PostController extends Controller
         $post->photo = $path;
         
         $post->save();
+        return redirect('/');
+    }
+
+    //Deleta o post e o arquivo
+    public function destroy($id){
+        $post = Post::find($id);
+        
+        if(isset($post)){ 
+            //(!) :: post->photo é o path no
+            //'storage->app->public'
+            $filePath = $post->photo;
+            Storage::disk('public')->delete($filePath);
+            $post->delete();
+        }
+ 
         return redirect('/');
     }
 }
