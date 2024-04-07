@@ -116,8 +116,9 @@
                             <div class="col-md-4">
                                 <div class="card mb-4 shadow-sm">
                                     {{-- Repare em como a imagem está sendo acessada --}}
-                                    <img class="card-img-top figure-img img-fluid rounded" src="/storage/{{$post->photo}}">
-                                    
+                                    <img class="card-img-top figure-img img-fluid rounded"
+                                        src="/storage/{{ $post->photo }}">
+
                                     <div class="card-body">
                                         <p class="card-text">{{ $post->email }}</p>
                                         <p class="card-text">{{ $post->message }}</p>
@@ -125,10 +126,12 @@
                                             <div class="btn-group">
                                                 <!--button type="button" class="btn btn-sm btn-outline-secondary">Download</button-->
                                                 <a type="button" class="btn btn-sm btn-outline-secondary"
-                                                    href="#">Download</a>
+                                                    href="{{route('post.download', $post->id)}}">Download</a>
+                                                {{-- <a type="button" class="btn btn-sm btn-outline-secondary"
+                                                    href="{{ Storage::download($post->photo) }}">Download</a> --}}
 
                                                 {{-- Remoção --}}
-                                                <form method="post" action="{{route('post.destroy', $post->id)}}">
+                                                <form method="post" action="{{ route('post.destroy', $post->id) }}">
                                                     @csrf
                                                     {{-- Repare no campo hidden com value 'delete', ele ajudar 
                                                     o láravel a interpretar a ação --}}
