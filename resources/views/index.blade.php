@@ -126,12 +126,17 @@
                                                 <!--button type="button" class="btn btn-sm btn-outline-secondary">Download</button-->
                                                 <a type="button" class="btn btn-sm btn-outline-secondary"
                                                     href="#">Download</a>
-                                                <form>
+
+                                                {{-- Remoção --}}
+                                                <form method="post" action="{{route('post.destroy', $post->id)}}">
                                                     @csrf
+                                                    {{-- Repare no campo hidden com value 'delete', ele ajudar 
+                                                    o láravel a interpretar a ação --}}
                                                     <input type="hidden" name="_method" value="delete">
                                                     <button type="submit"
                                                         class="btn btn-sm btn-outline-danger">Apagar</button>
                                                 </form>
+
                                             </div>
                                         </div>
                                     </div>
