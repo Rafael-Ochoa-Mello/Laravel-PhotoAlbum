@@ -15,10 +15,18 @@ class PostController extends Controller
 
     public function store(Request $request){
         $post = new Post();
+        
         $post->email = $request->email;
         $post->message = $request->message;
+        
         //Repare que no arquivo, é necessário o método 'file'
-        $post->photo = $request->file("photo");
+        //em seguida, devemos utilizar o metodo 'store',
+        //enviando como argumento o path desejado 
+        $path = $request->file("photo")->store('images', 'public');
+
+        //Como comentado, aqui salvaremos apenas o path
+        $post->photo = $path;
+        
         $post->save();
         return redirect('/');
     }
