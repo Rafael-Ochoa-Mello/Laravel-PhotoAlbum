@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{{ asset('bootstrap-p/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
+    {{-- Importações funcionais --}}
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
     <title>Álbum</title>
     <style>
         body {
@@ -162,8 +166,10 @@
         </div>
     </footer>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+    {{-- <script src="{{ asset('js/app.js') }}" type="text/javascript"></script> --}}
+    <script src="{{ asset('bootstrap-p/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    
 </body>
 
 </html>
