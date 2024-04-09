@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <title>Álbum</title>
     <style>
         body {
@@ -93,7 +94,7 @@
                         <textarea class="form-control" id="mensagem" name="message" rows="3"></textarea>
                     </div>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="photo" name="photo">
+                        <input type="file" class="custom-file-input" id="photo" name="photo" required>
                         <label class="custom-file-label" for="photo">Escolha um arquivo</label>
                     </div>
                     <p>
@@ -162,7 +163,7 @@
         </div>
     </footer>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 </body>
 
